@@ -29,34 +29,34 @@
     quick-tap-ms = <200>;
 };
 
-/ {
-    macros {
-        tln_base: type_base {
-            label = "Type Base";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp B &kp A &kp S &kp E>;
-        };
-        tln_nav: type_nav {
-            label = "Type nav";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N &kp A &kp V>;
-        };
-        tln_mouse: type_mouse {
-            label = "Type mouse";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp M &kp O &kp U &kp S &kp E>;
-        };
-        tln_qwerty: type_qwerty {
-            label = "Type qwerty";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp W &kp E &kp R &kp T &kp Y>;
-        };
-    };
-};
+// / {
+//     macros {
+//         tln_base: type_base {
+//             label = "Type Base";
+//             compatible = "zmk,behavior-macro";
+//             #binding-cells = <0>;
+//             bindings = <&kp B &kp A &kp S &kp E>;
+//         };
+//         tln_nav: type_nav {
+//             label = "Type nav";
+//             compatible = "zmk,behavior-macro";
+//             #binding-cells = <0>;
+//             bindings = <&kp N &kp A &kp V>;
+//         };
+//         tln_mouse: type_mouse {
+//             label = "Type mouse";
+//             compatible = "zmk,behavior-macro";
+//             #binding-cells = <0>;
+//             bindings = <&kp M &kp O &kp U &kp S &kp E>;
+//         };
+//         tln_qwerty: type_qwerty {
+//             label = "Type qwerty";
+//             compatible = "zmk,behavior-macro";
+//             #binding-cells = <0>;
+//             bindings = <&kp Q &kp W &kp E &kp R &kp T &kp Y>;
+//         };
+//     };
+// };
 
 // colemak macros
 #define A_LMETA &mt LMETA A
