@@ -127,6 +127,7 @@
 &kp LSHFT  &kp Z        &kp X        &kp C        &kp V        &kp B           &kp END      &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RSHFT   &kp UP
 &kp LCTRL      &lt LALT     &lt L_MEDIA ESC  &lt L_NAV SPACE       &lt L_MOUSE TAB &lt L_SYM ENTER  &lt L_NUM BSPC   &lt L_FUNC DEL       &kp LALT     &kp RCTRL   &kp BT_SEL  0
                     >;
+        };
     };
 };
 
