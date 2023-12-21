@@ -19,45 +19,6 @@
 #define L_MEDIA 8
 
 
-&lt {
-    tapping-term-ms = <200>;
-    quick-tap-ms = <200>;
-};
-
-&mt {
-    tapping-term-ms = <300>;
-    quick-tap-ms = <200>;
-};
-
-/ {
-    macros {
-        tln_base: type_base {
-            label = "Type Base";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp B &kp A &kp S &kp E>;
-        };
-        tln_nav: type_nav {
-            label = "Type nav";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N &kp A &kp V>;
-        };
-        tln_mouse: type_mouse {
-            label = "Type mouse";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp M &kp O &kp U &kp S &kp E>;
-        };
-        tln_qwerty: type_qwerty {
-            label = "Type qwerty";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp W &kp E &kp R &kp T &kp Y>;
-        };
-    };
-};
-
 // colemak macros
 #define A_LMETA &mt LMETA A
 #define R_LALT  &mt LALT R
@@ -78,43 +39,8 @@
 #define L_RALT  &mt RALT L
 #define SEM_LMETA &mt LMETA SEMI
 
-&caps_word {
-    continue-list = < UNDERSCORE MINUS >;
-};
 
 / {
-    behaviors {
-        // toggle qwerty if the K key is tapped twice
-        tgl_qwerty_bt: toggle_layer {
-            label = "TOG_QWERTY";
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = < &lt L_BT ESC>, <&tog L_QWERTY >;
-        };
-
-        double_shift: double_shift_capsword {
-            label = "Double Shift Capsword";
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = < &kp LSHFT >, < &caps_word >;
-        };
-    };
-
-     macros {
-        lclick: lclick {
-            label = "lclick";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp KP_SLASH>, <&macro_tap &kp KP_N5>, <&macro_release &kp KP_SLASH>;
-        };
-        rclick: rclick {
-            label = "rclick";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp KP_MINUS>, <&macro_tap &kp KP_N5>, <&macro_release &kp KP_MINUS>;
-        };
-    };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -122,10 +48,9 @@
         default_layer {
                     bindings = <
 &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp HOME     &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS   &kp PSCRN
-&kp TAB    &kp Q        &kp W        &kp E        &kp R        &kp T           &kp PG_UP    &kp Y        &kp U        &kp I        &kp O        &kp P        &kp LBRC    &kp RBRC
-&kp CAPS   A_LMETA      R_LALT       S_LCTRL      T_LSHFT      &kp G           &kp PG_DN    &kp H        N_RSHFT      E_RCTRL      I_RALT      O_RMETA       &kp SQT     &kp ENTER
-&kp LSHFT  &kp Z        &kp X        &kp C        &kp V        &kp B           &kp END      &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RSHFT   &kp UP
-&kp LCTRL      &lt LALT     &lt L_MEDIA ESC  &lt L_NAV SPACE       &lt L_MOUSE TAB &lt L_SYM ENTER  &lt L_NUM BSPC   &lt L_FUNC DEL       &kp LALT     &kp RCTRL   &kp BT_SEL  0
+&kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp HOME     &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS   &kp PSCRN
+&kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp HOME     &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS   &kp PSCRN
+&kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp HOME     &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
                     >;
         };
     };
