@@ -88,7 +88,7 @@
 / {
     behaviors {
         // toggle qwerty if the K key is tapped twice
-        tgl_qwerty_bt: toggle_layer {
+        tgl_qwerty_bt: toggle_qwerty {
             label = "TOG_QWERTY";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -115,9 +115,9 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
        &kp CAPS       A_LMETA          R_LALT           S_LCTRL          T_LSHFT         &kp G          &kp PG_DN       &kp M            N_RSHFT     E_RCTRL           I_RALT           O_RMETA        &kp SEMI          &kp ENTER
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-       &kp LSHFT      &kp Z            &kp X            &kp C            &kp D           &kp V          &kp END         &kp K            &kp H       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT        &kp UP
+     &double_shift      &kp Z        &kp X            &kp C            &kp D           &kp V          &kp END         &kp K            &kp H       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT        &kp UP
 // ├───────────────┴──────────┬────┴───────────────┴┬──────────────┴───┬───────────┴────────┬──────┴───────┬───────┴────┬──────────┴──────┬────────┴────────┬──────┴───────────────┴─────┬─────────┴───────────────┼───────────────┤
-            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                   &kp RCTRL             &tog L_QWERTY
+            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                   &kp RCTRL             &tgl_qwerty_bt
 // └──────────────────────────┴─────────────────────┴──────────────────┴────────────────────┴──────────────┴────────────┴─────────────────┴─────────────────┴────────────────────────────┴─────────────────────────┴───────────────┘
             >;
         };
