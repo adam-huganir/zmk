@@ -88,11 +88,25 @@
 / {
     behaviors {
         // toggle qwerty if the K key is tapped twice
-        tgl_qwerty_bt: toggle_qwerty {
+        rctl_toggle_qwerty: rctl_toggle_qwerty {
             label = "TOG_QWERTY";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = < &tog L_QWERTY >, < &tog L_BASE >, < &bt BT_NXT >;
+            bindings =  < &kp RCTRL >, < &tog L_QWERTY >, < &tog L_BASE >;
+        };
+
+        rctl_toggle_base: rctl_toggle_base {
+            label = "UNTOG_QWERTY";
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =  < &kp RCTRL >, < &tog L_QWERTY >, < &tog L_BASE >;
+        };
+
+        bt_tapadance: bt_tapadance {
+            label = "Switch bluetooth and clear profiles";
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = < &bt BT_NXT >, < &bt BT_SEL 0 >, <&bt BT_CLR>;
         };
 
         double_shift: double_shift_capsword {
@@ -111,13 +125,13 @@
 // ┌───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┐
        &kp ESC        &kp N1           &kp N2           &kp N3           &kp N4          &kp N5         &kp HOME        &kp N6           &kp N7      &kp N8            &kp N9            &kp N0        &kp MINUS        &kp PSCRN
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-       &kp TAB        &kp Q            &kp W            &kp F            &kp P           &kp B          &kp PG_UP       &kp J            &kp L       &kp U             &kp Y             &kp SQT       &kp LBRC       &kp RBRC
+       &kp TAB        &kp Q            &kp W            &kp F            &kp P           &kp B          &kp PG_UP       &kp J            &kp L       &kp U             &kp Y             &kp SQT       &kp LBRC         &kp RBRC
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-       &kp CAPS       A_LMETA          R_LALT           S_LCTRL          T_LSHFT         &kp G          &kp PG_DN       &kp M            N_RSHFT     E_RCTRL           I_RALT           O_RMETA        &kp SEMI          &kp ENTER
+       &kp CAPS       A_LMETA          R_LALT           S_LCTRL          T_LSHFT         &kp G          &kp PG_DN       &kp M            N_RSHFT     E_RCTRL           I_RALT           O_RMETA        &kp SEMI         &kp ENTER
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-     &double_shift      &kp Z        &kp X            &kp C            &kp D           &kp V          &kp END         &kp K            &kp H       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT        &kp UP
+     &double_shift      &kp Z        &kp X            &kp C            &kp D           &kp V          &kp END         &kp K            &kp H       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT         &kp UP
 // ├───────────────┴──────────┬────┴───────────────┴┬──────────────┴───┬───────────┴────────┬──────┴───────┬───────┴────┬──────────┴──────┬────────┴────────┬──────┴───────────────┴─────┬─────────┴───────────────┼───────────────┤
-            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                   &kp RCTRL             &tgl_qwerty_bt
+            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                &rctl_toggle_qwerty      &bt_tapadance
 // └──────────────────────────┴─────────────────────┴──────────────────┴────────────────────┴──────────────┴────────────┴─────────────────┴─────────────────┴────────────────────────────┴─────────────────────────┴───────────────┘
             >;
         };
@@ -169,7 +183,7 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT      &kp Z            &kp X            &kp C            &kp V           &kp B          &kp END         &kp N            &kp M       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT        &kp UP
 // ├───────────────┴──────────┬────┴───────────────┴┬──────────────┴───┬───────────┴────────┬──────┴───────┬───────┴────┬──────────┴──────┬────────┴────────┬──────┴───────────────┴─────┬─────────┴───────────────┼───────────────┤
-            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                   &kp RCTRL             &tog L_BASE
+            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                 &rctl_toggle_base     &bt_tapadance
 // └──────────────────────────┴─────────────────────┴──────────────────┴────────────────────┴──────────────┴────────────┴─────────────────┴─────────────────┴────────────────────────────┴─────────────────────────┴───────────────┘
                     >;
                 };
