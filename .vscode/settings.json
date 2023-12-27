@@ -3,7 +3,6 @@
     "*.overlay": "dts",
     "*.keymap": "dts"
   },
-  "python.formatting.provider": "black",
   "[c]": {
     "editor.formatOnSave": true
   },
@@ -11,12 +10,10 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.python"
-  },
+  "[python]": {},
   "[css][json][jsonc][html][markdown][yaml]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cmake.configureOnOpen": false
 }

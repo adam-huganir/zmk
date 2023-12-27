@@ -102,7 +102,7 @@
             bindings =  < &kp RCTRL >, < &tog L_QWERTY >, < &tog L_BASE >;
         };
 
-        bt_tapadance: bt_tapadance {
+        bt_tapdance: bt_tapdance {
             label = "Switch bluetooth and clear profiles";
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -131,7 +131,7 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
      &double_shift      &kp Z        &kp X            &kp C            &kp D           &kp V          &kp END         &kp K            &kp H       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT         &kp UP
 // ├───────────────┴──────────┬────┴───────────────┴┬──────────────┴───┬───────────┴────────┬──────┴───────┬───────┴────┬──────────┴──────┬────────┴────────┬──────┴───────────────┴─────┬─────────┴───────────────┼───────────────┤
-            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                &rctl_toggle_qwerty      &bt_tapadance
+            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC   &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                &rctl_toggle_qwerty      &bt_tapdance
 // └──────────────────────────┴─────────────────────┴──────────────────┴────────────────────┴──────────────┴────────────┴─────────────────┴─────────────────┴────────────────────────────┴─────────────────────────┴───────────────┘
             >;
         };
@@ -179,11 +179,11 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp TAB        &kp Q            &kp W            &kp E            &kp R           &kp T          &kp PG_UP       &kp Y            &kp U       &kp I             &kp O             &kp P         &kp LBRC         &kp RBRC
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-        &kp CAPS       A_LMETA          S_LALT           D_LCTRL        F_LSHFT         &kp G          &kp PG_DN         &kp H            J_RSHFT       K_RCTRL           L_RALT           SEM_LMETA       &kp SQT        &kp ENTER
+        &kp CAPS       A_LMETA          S_LALT           D_LCTRL        F_LSHFT         &kp G          &kp PG_DN         &kp H            J_RSHFT       K_RCTRL           L_RALT         SEM_LMETA       &kp SQT        &kp ENTER
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
         &kp LSHFT      &kp Z            &kp X            &kp C            &kp V           &kp B          &kp END         &kp N            &kp M       &kp COMMA         &kp DOT           &kp FSLH      &kp RSHFT        &kp UP
 // ├───────────────┴──────────┬────┴───────────────┴┬──────────────┴───┬───────────┴────────┬──────┴───────┬───────┴────┬──────────┴──────┬────────┴────────┬──────┴───────────────┴─────┬─────────┴───────────────┼───────────────┤
-            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                 &rctl_toggle_base     &bt_tapadance
+            &kp LCTRL               &kp LALT           &lt L_MEDIA ESC     &lt L_NAV SPACE   &lt L_MOUSE TAB &lt L_SYM ENTER &lt L_NUM BSPC  &lt L_FUNC DEL         &kp LALT                 &rctl_toggle_base     &bt_tapdance
 // └──────────────────────────┴─────────────────────┴──────────────────┴────────────────────┴──────────────┴────────────┴─────────────────┴─────────────────┴────────────────────────────┴─────────────────────────┴───────────────┘
                     >;
                 };
